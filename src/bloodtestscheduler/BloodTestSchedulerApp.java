@@ -15,10 +15,11 @@ public class BloodTestSchedulerApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here       
+        // TODO code application logic here  
+        
         BloodTestPriorityQ pq = new BloodTestPriorityQ();
 
-        
+        BloodTestSchedulerQueue qq = new  BloodTestSchedulerQueue();
 
         BloodTestSchedulerGUI appGUI = new BloodTestSchedulerGUI();
         appGUI.setVisible(true);

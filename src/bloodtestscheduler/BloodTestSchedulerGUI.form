@@ -41,7 +41,7 @@
                           <Group type="102" attributes="0">
                               <Component id="arrivalorderBTN" min="-2" pref="303" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                              <Component id="removelastpersonBTN" min="-2" max="-2" attributes="0"/>
+                              <Component id="displaylastfiveBTN" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -64,7 +64,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="priorityBTN" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="arrivalorderBTN" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="removelastpersonBTN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="displaylastfiveBTN" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Component id="captionLBL" min="-2" max="-2" attributes="0"/>
@@ -142,13 +142,16 @@
         <Property name="text" type="java.lang.String" value="Priority List: 1 - Urgent / 2 - Medium / 3 - Low"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="removelastpersonBTN">
+    <Component class="javax.swing.JButton" name="displaylastfiveBTN">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Display Last Five People on the List"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="displaylastfiveBTNActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

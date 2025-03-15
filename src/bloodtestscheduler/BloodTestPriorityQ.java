@@ -76,7 +76,7 @@ public class BloodTestPriorityQ implements BloodTestSchedulerInterface {
             txt = txt.concat("Priority: " + temp.getPriority() + ". Name: "
                 + temp.getName() + ". Age: " + temp.getAge()
                 + ". Does the patient come from another hospital ward? "
-                + temp.getWard() + ". GP Details: " + temp.getGpDetails() + "\n");
+                + temp.getWard() + ". GP Details: " + temp.getGpDetails() + "." + "\n");
 
         }
         return txt;

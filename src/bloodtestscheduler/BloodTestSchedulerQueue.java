@@ -8,67 +8,72 @@ import java.util.ArrayList;
 
 /**
  * BloodTestSchedulerElement.java 
- * 13th March 2025
+ * 14th March 2025
  * @author Murilo Batiuk
  */
 
 public class BloodTestSchedulerQueue implements BloodTestSchedulerQueueInterface {
-    
-    private ArrayList<String> theQueueA; 
-    
-    public MyQueue(){
-        theQueueA = new ArrayList<>(); 
-    
-    
-    @Override
-    public int size(){
-       return theQueueA.size(); 
+
+    private final ArrayList<String> theQueueA;
+
+    public BloodTestSchedulerQueue() {
+        theQueueA = new ArrayList<>();
     }
+
     @Override
-    public boolean isEmpty(){
+    public int size() {
+        return theQueueA.size();
+    }
+
+    @Override
+    public boolean isEmpty() {
         return theQueueA.isEmpty();
     }
+
     @Override
-    public void enqueue(Object element){
-        theQueueA.add((String) element);
+    public void enqueue(int priority, String name, String age, String ward, String gpDetails) {
+        String element = "Priority: " + priority + ". Name: " + name + ". Age " + age + 
+          ". Does the patient come from another hospital ward?  " + ward + ". GP details: " + gpDetails + "." + "\n";
+        theQueueA.add(element);  
     }
+
     @Override
-    public Object dequeue(){
-        return theQueueA.remove(0);
+    public Object dequeue() {
+        if (!theQueueA.isEmpty()) {
+            return theQueueA.remove(0);
+        }
+        return null;
     }
+
     @Override
-    public Object frontElement(){
-        if(!theQueueA.isEmpty()){ 
+    public Object frontElement() {
+        if (!theQueueA.isEmpty()) {
             return theQueueA.get(0);
-        }else{ 
+        } else {
             return null;
         }
     }
+
     
-    public void clearAll(){
-       
-        if(theQueueA.size() > 0){
+    public void clearAll() {
+        if (!theQueueA.isEmpty()) {
             theQueueA.clear();
             System.out.println("Queue is now empty");
-        }else{
+        } else {
             System.out.println("Queue is already empty");
         }
     }
-    
-    public String displayQueue(){
-       
-       String str = new String(); 
-       
-       if(theQueueA.isEmpty()){
-           str = str.concat("Nothing in Queue"); 
-       }else{
-           for (int i=0; i<theQueueA.size();i++){
-               str = str.concat(theQueueA.get(i));
-               str = str.concat(" ; ");
-           }
-       }
-        
-       return str;
-   }
-    
+
+    @Override
+    public String displayQueue() {
+        if (theQueueA.isEmpty()) {
+            return "Nothing in Queue";
+        }
+
+        StringBuilder str = new StringBuilder();
+        for (String element : theQueueA) {
+            str.append(element).append("");
+        }
+        return str.toString();
+    }
 }

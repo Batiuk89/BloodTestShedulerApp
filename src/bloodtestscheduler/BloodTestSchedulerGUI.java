@@ -13,6 +13,8 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     
     private final BloodTestPriorityQ pq;
     
+    private final BloodTestSchedulerQueue qq;
+    
     /**
      * Creates new form BloodTestSchedulerGUI
      */
@@ -36,6 +38,23 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         pq.enqueue(2, "Fiona McDonagh", "41", "YES", "Dr. Brian Keane");
         pq.enqueue(3, "Liam O'Sullivan", "63", "NO", "Dr. Catherine Murray");
         
+        qq = new BloodTestSchedulerQueue();
+        qq.enqueue(1, "Bernard Fahey", "65", "YES", "Dr. John Kelly");
+        qq.enqueue(2, "Mary O'Connell", "25", "NO", "Dr. Sarah Murphy");
+        qq.enqueue(3, "Marion Sullivan", "36", "NO", "Dr. Emma Doyle");
+        qq.enqueue(2, "Sean Murphy", "42", "YES", "Dr. Michael Byrne");
+        qq.enqueue(1, "Niamh O'Neill", "29", "NO", "Dr. Laura Gallagher");
+        qq.enqueue(3, "Patrick McCarthy", "58", "YES", "Dr. David Walsh");
+        qq.enqueue(1, "Aoife Doyle", "33", "NO", "Dr. Rachel Nolan");
+        qq.enqueue(3, "Eoin Kelly", "47", "YES", "Dr. Peter Fitzpatrick");
+        qq.enqueue(2, "Siobhan Byrne", "31", "NO", "Dr. Anna O'Brien");
+        qq.enqueue(1, "Conor Fitzgerald", "22", "YES", "Dr. Mark Brennan");
+        qq.enqueue(2, "Grainne Brennan", "39", "NO", "Dr. Lisa Doyle");
+        qq.enqueue(3, "Ciaran Gallagher", "50", "YES", "Dr. James Ryan");
+        qq.enqueue(1, "Orla Quinn", "27", "NO", "Dr. Emily Farrell");
+        qq.enqueue(2, "Fiona McDonagh", "41", "YES", "Dr. Brian Keane");
+        qq.enqueue(3, "Liam O'Sullivan", "63", "NO", "Dr. Catherine Murray");
+        
     }
 
     /**
@@ -54,7 +73,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         arrivalorderBTN = new javax.swing.JButton();
         priorityBTN = new javax.swing.JButton();
         captionLBL = new javax.swing.JLabel();
-        removelastpersonBTN = new javax.swing.JButton();
+        displaylastfiveBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,8 +111,13 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         captionLBL.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         captionLBL.setText("Priority List: 1 - Urgent / 2 - Medium / 3 - Low");
 
-        removelastpersonBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        removelastpersonBTN.setText("Display Last Five People on the List");
+        displaylastfiveBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        displaylastfiveBTN.setText("Display Last Five People on the List");
+        displaylastfiveBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                displaylastfiveBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,7 +139,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(arrivalorderBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(34, 34, 34)
-                                .addComponent(removelastpersonBTN)))
+                                .addComponent(displaylastfiveBTN)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(353, 353, 353)
@@ -131,7 +155,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(priorityBTN)
                     .addComponent(arrivalorderBTN)
-                    .addComponent(removelastpersonBTN))
+                    .addComponent(displaylastfiveBTN))
                 .addGap(48, 48, 48)
                 .addComponent(captionLBL)
                 .addGap(18, 18, 18)
@@ -160,7 +184,14 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
 
     private void arrivalorderBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arrivalorderBTNActionPerformed
         // TODO add your handling code here:
+        
+        displayTA.setText(qq.displayQueue());
+        
     }//GEN-LAST:event_arrivalorderBTNActionPerformed
+
+    private void displaylastfiveBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displaylastfiveBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_displaylastfiveBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,10 +232,10 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     private javax.swing.JButton arrivalorderBTN;
     private javax.swing.JLabel captionLBL;
     private javax.swing.JTextArea displayTA;
+    private javax.swing.JButton displaylastfiveBTN;
     private javax.swing.JButton exitBTN;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton priorityBTN;
-    private javax.swing.JButton removelastpersonBTN;
     private javax.swing.JLabel titleLBL;
     // End of variables declaration//GEN-END:variables
 }

@@ -10,13 +10,13 @@ package bloodtestscheduler;
  * @author Murilo Batiuk
  */
 
-public interface BloodTestSchedulerQueueInterface {
-
-    public int size();
+public interface BloodTestSchedulerStackInterface {
+    
+    public void push(int priority, String name, String age, String ward, String gpDetails);
+    public Object pop();    
+    public Object peek();
     public boolean isEmpty();
-    public void enqueue(int priority, String name, String age, String ward, String gpDetails);
-    public Object dequeue();
-    public Object frontElement();
-    public String displayQueue();
-
+    public int size();
+    public String displayStack();
+    
 }

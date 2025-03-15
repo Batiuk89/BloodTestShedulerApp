@@ -5,8 +5,8 @@
 package bloodtestscheduler;
 
 /**
- * BloodTestSchedulerElement.java 13th March 2025
- *
+ * BloodTestSchedulerElement.java 
+ * 13th March 2025
  * @author Murilo Batiuk
  */
 public class BloodTestSchedulerElement {
