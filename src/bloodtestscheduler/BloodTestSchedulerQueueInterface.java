@@ -18,5 +18,4 @@ public interface BloodTestSchedulerQueueInterface {
     public Object dequeue();
     public Object frontElement();
     public String displayQueue();
-
 }

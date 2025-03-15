@@ -64,8 +64,8 @@ public class BloodTestSchedulerElement {
 
     @Override
     public String toString() {
-        return "BloodTestSchedulerElement{priority=" + priority + ", name=" + name
-                + ", age=" + age + ", ward=" + ward + ", GP Details=" + gpDetails + "}";
+        return "Priority:" + priority + ". Name: " + name
+                + ". Age:" + age + ". Ward:" + ward + " .GP Details:" + gpDetails + "." + "\n";
     }
 
 }

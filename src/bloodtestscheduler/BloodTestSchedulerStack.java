@@ -11,66 +11,67 @@ import java.util.ArrayList;
  * 14th March 2025
  * @author Murilo Batiuk
  */
+public abstract class BloodTestSchedulerStack implements BloodTestSchedulerStackInterface {
 
-public abstract class BloodTestSchedulerStack implements BloodTestSchedulerStackInterface{
-    
-     ArrayList<String> theStack;
-    
-    public BloodTestSchedulerStack() {
-        theStack = new ArrayList<>();        
+    ArrayList<String> theStack;
+    BloodTestSchedulerQueue thePQueue;  
+
+    public BloodTestSchedulerStack(BloodTestSchedulerQueue queue) {
+        this.theStack = new ArrayList<>();
+        this.thePQueue = queue;  
     }
-   
+
     @Override
-    public boolean isEmpty(){
-        return theStack.isEmpty();        
+    public boolean isEmpty() {
+        return theStack.isEmpty();
     }
-    
+
     @Override
     public void push(int priority, String name, String age, String ward, String gpDetails) {
-    
-    String item = "Priority: " + priority + ". Name: " + name + ". Age: " + age + ". Does the patient come from another hospital ward? " + ward + ". GP details: " + gpDetails;
-    
-    theStack.add(0, item); // Adiciona no topo da pilha (na posição 0)
-}
-    
+
+        String item = "Priority: " + priority + ". Name: " + name + ". Age: " + age + ". Does the patient come from another hospital ward? " + ward + ". GP details: " + gpDetails;
+
+        theStack.add(0, item); 
+    }
+
     @Override
-    public Object pop(){
-        if (!(theStack.isEmpty())){
+    public Object pop() {
+        if (!(theStack.isEmpty())) {
             return theStack.remove(0);
-        }else{
+        } else {
             return null;
         }
     }
-    
+
     @Override
     public Object peek() {
-      if (theStack.isEmpty()) {
-          System.out.println("Clear list");
-          return null;
-      } else {    
-          return theStack.get(0);
-      }
+        if (theStack.isEmpty()) {
+            System.out.println("List is empty");
+            return null;
+        } else {
+            return theStack.get(0);
+        }
     }
-  
+
     @Override
-    public int size(){
+    public int size() {
         return theStack.size();
     }
 
     @Override
-    public String displayStack(){
-       
-       String str = new String(); 
-       
-       if(theStack.isEmpty()){
-           str = str.concat("List is empty!");
-       }else{
-           for (int i = 0; i<theStack.size(); i++){
-               str = str.concat(theStack.get(i));
-               str = str.concat("");
-           }
-       }
-       return str;
+    public String displayStack() {
+
+        String str = new String();
+
+        if (theStack.isEmpty()) {
+            str = str.concat("List is empty!");
+        } else {
+            for (int i = 0; i < theStack.size(); i++) {
+                str = str.concat(theStack.get(i));
+                str = str.concat("");
+            }
+        }
+        return str;
     }
 
 }

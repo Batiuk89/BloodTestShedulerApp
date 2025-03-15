@@ -16,5 +16,6 @@ public interface BloodTestSchedulerInterface {
     public boolean isEmpty();
     public Object dequeue();
     public String printPQueue();
+    public Object peekLastFive();
 
 }

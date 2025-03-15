@@ -74,6 +74,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         priorityBTN = new javax.swing.JButton();
         captionLBL = new javax.swing.JLabel();
         displaylastfiveBTN = new javax.swing.JButton();
+        amountofpeopleBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,6 +120,14 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             }
         });
 
+        amountofpeopleBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        amountofpeopleBTN.setText("How Many Patients Are There on the Queue?");
+        amountofpeopleBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                amountofpeopleBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,21 +135,22 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(exitBTN)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 914, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(priorityBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(captionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(arrivalorderBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(displaylastfiveBTN)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(arrivalorderBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(34, 34, 34)
-                                .addComponent(displaylastfiveBTN)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(amountofpeopleBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(captionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 914, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(exitBTN))
+                        .addGap(19, 19, 19))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(353, 353, 353)
                 .addComponent(titleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,10 +166,15 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
                     .addComponent(priorityBTN)
                     .addComponent(arrivalorderBTN)
                     .addComponent(displaylastfiveBTN))
-                .addGap(48, 48, 48)
-                .addComponent(captionLBL)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(captionLBL))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(amountofpeopleBTN)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
                 .addGap(27, 27, 27)
                 .addComponent(exitBTN)
                 .addGap(17, 17, 17))
@@ -191,7 +206,17 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
 
     private void displaylastfiveBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displaylastfiveBTNActionPerformed
         // TODO add your handling code here:
+        
+        displayTA.setText(String.valueOf(pq.peekLastFive()));
+        
     }//GEN-LAST:event_displaylastfiveBTNActionPerformed
+
+    private void amountofpeopleBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountofpeopleBTNActionPerformed
+        // TODO add your handling code here:
+        
+        displayTA.setText(String.valueOf(qq.size()));
+
+    }//GEN-LAST:event_amountofpeopleBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,6 +254,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton amountofpeopleBTN;
     private javax.swing.JButton arrivalorderBTN;
     private javax.swing.JLabel captionLBL;
     private javax.swing.JTextArea displayTA;

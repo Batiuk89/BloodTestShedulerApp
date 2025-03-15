@@ -81,5 +81,22 @@ public class BloodTestPriorityQ implements BloodTestSchedulerInterface {
         }
         return txt;
     }
+    
+    @Override
+    public Object peekLastFive() {
+        if (thePQueue.isEmpty()) {
+            System.out.println("List is empty");
+            return null;
+        } else {
+            int startIndex = Math.max(0, thePQueue.size() - 5);  
+            StringBuilder result = new StringBuilder();
+
+            for (int i = startIndex; i < thePQueue.size(); i++) {
+                result.append(thePQueue.get(i)).append("");
+            }
+
+            return result.toString();  
+        }
+    }
 
 }
