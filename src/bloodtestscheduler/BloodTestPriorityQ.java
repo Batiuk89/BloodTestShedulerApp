@@ -7,8 +7,8 @@ package bloodtestscheduler;
 import java.util.ArrayList;
 
 /**
- * BloodTestPriorityQ.java 
- * 13th March 2025
+ * BloodTestPriorityQ.java 13th March 2025
+ *
  * @author Murilo Batiuk
  */
 public class BloodTestPriorityQ implements BloodTestSchedulerInterface {
@@ -37,13 +37,12 @@ public class BloodTestPriorityQ implements BloodTestSchedulerInterface {
         for (position = 0; position < thePQueue.size(); position++) {
             System.out.println("inside findInsertKey loop. position = " + position);
             elem = thePQueue.get(position);
-            if (elem.getPriority() < newkey) {  //compare the priority's
-                break; //if less then quit as you have it, gets returned below
+            if (elem.getPriority() > newkey) { 
+                break;
             }
         }
 
         return position;
-
     }
 
     @Override
@@ -74,28 +73,28 @@ public class BloodTestPriorityQ implements BloodTestSchedulerInterface {
             temp = thePQueue.get(i);
 
             txt = txt.concat("Priority: " + temp.getPriority() + ". Name: "
-                + temp.getName() + ". Age: " + temp.getAge()
-                + ". Does the patient come from another hospital ward? "
-                + temp.getWard() + ". GP Details: " + temp.getGpDetails() + "." + "\n");
+                    + temp.getName() + ". Age: " + temp.getAge()
+                    + ". Does the patient come from another hospital ward? "
+                    + temp.getWard() + ". GP Details: " + temp.getGpDetails() + "." + "\n");
 
         }
         return txt;
     }
-    
+
     @Override
     public Object peekLastFive() {
         if (thePQueue.isEmpty()) {
             System.out.println("List is empty");
             return null;
         } else {
-            int startIndex = Math.max(0, thePQueue.size() - 5);  
+            int startIndex = Math.max(0, thePQueue.size() - 5);
             StringBuilder result = new StringBuilder();
 
             for (int i = startIndex; i < thePQueue.size(); i++) {
                 result.append(thePQueue.get(i)).append("");
             }
 
-            return result.toString();  
+            return result.toString();
         }
     }
 

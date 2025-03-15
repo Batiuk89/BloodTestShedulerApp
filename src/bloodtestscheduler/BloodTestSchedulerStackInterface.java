@@ -15,10 +15,8 @@ public interface BloodTestSchedulerStackInterface {
     public void push(int priority, String name, String age, String ward, String gpDetails);
     public Object pop();    
     public Object peek();
-    public Object peekLastFive();
     public boolean isEmpty();
     public int size();
     public String displayStack();
-    public String get();
     
 }

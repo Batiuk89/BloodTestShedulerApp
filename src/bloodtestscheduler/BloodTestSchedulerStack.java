@@ -11,14 +11,12 @@ import java.util.ArrayList;
  * 14th March 2025
  * @author Murilo Batiuk
  */
-public abstract class BloodTestSchedulerStack implements BloodTestSchedulerStackInterface {
+public class BloodTestSchedulerStack implements BloodTestSchedulerStackInterface {
 
     ArrayList<String> theStack;
-    BloodTestSchedulerQueue thePQueue;  
-
-    public BloodTestSchedulerStack(BloodTestSchedulerQueue queue) {
+    
+    public BloodTestSchedulerStack() {
         this.theStack = new ArrayList<>();
-        this.thePQueue = queue;  
     }
 
     @Override
@@ -29,7 +27,8 @@ public abstract class BloodTestSchedulerStack implements BloodTestSchedulerStack
     @Override
     public void push(int priority, String name, String age, String ward, String gpDetails) {
 
-        String item = "Priority: " + priority + ". Name: " + name + ". Age: " + age + ". Does the patient come from another hospital ward? " + ward + ". GP details: " + gpDetails;
+        String item = "Priority: " + priority + ". Name: " + name + ". Age: " 
+        + age + ". Does the patient come from another hospital ward? " + ward + ". GP details: " + gpDetails + " - REMOVED";
 
         theStack.add(0, item); 
     }
