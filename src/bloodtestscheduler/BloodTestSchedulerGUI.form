@@ -39,7 +39,7 @@
                           <Group type="102" attributes="0">
                               <Component id="amountofpeopleBTN" min="-2" pref="360" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                              <Component id="removelastBTN" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="lastpatientBTN" min="-2" pref="198" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="captionLBL" min="-2" pref="271" max="-2" attributes="0"/>
                           </Group>
@@ -71,7 +71,7 @@
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="amountofpeopleBTN" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="removelastBTN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lastpatientBTN" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="captionLBL" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -170,15 +170,15 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="amountofpeopleBTNActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="removelastBTN">
+    <Component class="javax.swing.JButton" name="lastpatientBTN">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Remove Last Patient"/>
+        <Property name="text" type="java.lang.String" value="Who is the Last Patient?"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removelastBTNActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lastpatientBTNActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

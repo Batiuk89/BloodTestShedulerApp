@@ -5,11 +5,11 @@
 package bloodtestscheduler;
 
 /**
- * BloodTestSchedulerInterface.java 
- * 13th March 2025
+ * BloodTestSchedulerPriorityQInterface.java 
+ 13th March 2025
  * @author Murilo Batiuk
  */
-public interface BloodTestSchedulerInterface {
+public interface BloodTestSchedulerPriorityQInterface {
 
     public void enqueue(int priority, String name, String age, String ward, String gpDetails);
     public int size();
@@ -19,3 +19,5 @@ public interface BloodTestSchedulerInterface {
     public Object peekLastFive();
 
 }
+
+    

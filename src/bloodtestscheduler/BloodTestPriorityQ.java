@@ -7,11 +7,11 @@ package bloodtestscheduler;
 import java.util.ArrayList;
 
 /**
- * BloodTestPriorityQ.java 13th March 2025
- *
+ * BloodTestPriorityQ.java 
+ * 13th March 2025
  * @author Murilo Batiuk
  */
-public class BloodTestPriorityQ implements BloodTestSchedulerInterface {
+public class BloodTestPriorityQ implements BloodTestSchedulerPriorityQInterface {
 
     private final ArrayList<BloodTestSchedulerElement> thePQueue;
 

@@ -28,7 +28,7 @@ public class BloodTestSchedulerStack implements BloodTestSchedulerStackInterface
     public void push(int priority, String name, String age, String ward, String gpDetails) {
 
         String item = "Priority: " + priority + ". Name: " + name + ". Age: " 
-        + age + ". Does the patient come from another hospital ward? " + ward + ". GP details: " + gpDetails + " - REMOVED";
+        + age + ". Does the patient come from another hospital ward? " + ward + ". GP details: " + gpDetails + " - IS THE LAST PATIENT.";
 
         theStack.add(0, item); 
     }

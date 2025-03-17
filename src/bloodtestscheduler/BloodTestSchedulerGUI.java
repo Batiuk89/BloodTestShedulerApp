@@ -94,7 +94,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         captionLBL = new javax.swing.JLabel();
         displaylastfiveBTN = new javax.swing.JButton();
         amountofpeopleBTN = new javax.swing.JButton();
-        removelastBTN = new javax.swing.JButton();
+        lastpatientBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -148,11 +148,11 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             }
         });
 
-        removelastBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        removelastBTN.setText("Remove Last Patient");
-        removelastBTN.addActionListener(new java.awt.event.ActionListener() {
+        lastpatientBTN.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lastpatientBTN.setText("Who is the Last Patient?");
+        lastpatientBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removelastBTNActionPerformed(evt);
+                lastpatientBTNActionPerformed(evt);
             }
         });
 
@@ -175,7 +175,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(amountofpeopleBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(42, 42, 42)
-                                .addComponent(removelastBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lastpatientBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(captionLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 914, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,7 +199,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(amountofpeopleBTN)
-                    .addComponent(removelastBTN)
+                    .addComponent(lastpatientBTN)
                     .addComponent(captionLBL))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
@@ -246,12 +246,12 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_amountofpeopleBTNActionPerformed
 
-    private void removelastBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removelastBTNActionPerformed
+    private void lastpatientBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastpatientBTNActionPerformed
         // TODO add your handling code here:
         
-        displayTA.setText(st.pop().toString());
+        displayTA.setText(st.peek().toString());
         
-    }//GEN-LAST:event_removelastBTNActionPerformed
+    }//GEN-LAST:event_lastpatientBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -296,8 +296,8 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     private javax.swing.JButton displaylastfiveBTN;
     private javax.swing.JButton exitBTN;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton lastpatientBTN;
     private javax.swing.JButton priorityBTN;
-    private javax.swing.JButton removelastBTN;
     private javax.swing.JLabel titleLBL;
     // End of variables declaration//GEN-END:variables
 }
