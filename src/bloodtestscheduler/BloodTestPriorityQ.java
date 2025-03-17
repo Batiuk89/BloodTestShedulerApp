@@ -13,22 +13,27 @@ import java.util.ArrayList;
  */
 public class BloodTestPriorityQ implements BloodTestSchedulerPriorityQInterface {
 
+    //Array to hold the queue lelemnts
     private final ArrayList<BloodTestSchedulerElement> thePQueue;
-
+    
+    //Constructor to initialise the PQ
     public BloodTestPriorityQ() {
         thePQueue = new ArrayList<>();
     }
 
+    //checks if the queue is empty
     @Override
     public boolean isEmpty() {
         return thePQueue.isEmpty();
     }
 
+    //checks the size
     @Override
     public int size() {
         return thePQueue.size();
     }
 
+    //finds the appropriate position to insert a new element based on its priority
     private int findInsertPosition(int newkey) {
         BloodTestSchedulerElement elem;
         int position = 0;
@@ -45,6 +50,7 @@ public class BloodTestPriorityQ implements BloodTestSchedulerPriorityQInterface 
         return position;
     }
 
+    //inserts a new elemnt in the correct position
     @Override
     public void enqueue(int priority, String name, String age, String ward, String gpDetails) {
         int index;
@@ -60,11 +66,13 @@ public class BloodTestPriorityQ implements BloodTestSchedulerPriorityQInterface 
         }
     }
 
+    //removes the first element based on priority
     @Override
     public Object dequeue() {
         return thePQueue.remove(0);
     }
 
+    //display the queue based on the priority (urgency)
     @Override
     public String printPQueue() {
         BloodTestSchedulerElement temp;
@@ -81,6 +89,7 @@ public class BloodTestPriorityQ implements BloodTestSchedulerPriorityQInterface 
         return txt;
     }
 
+    //displays the last five patients on the queue based on the priority
     @Override
     public Object peekLastFive() {
         if (thePQueue.isEmpty()) {

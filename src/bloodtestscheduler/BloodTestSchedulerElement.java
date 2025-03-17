@@ -11,9 +11,11 @@ package bloodtestscheduler;
  */
 public class BloodTestSchedulerElement {
 
-    private int priority;
-    private String name, age, ward, gpDetails;
+    //variables
+    private int priority; //create the var to order the queue based on priority
+    private String name, age, ward, gpDetails; //patients info
 
+    //constructor to initialise
     public BloodTestSchedulerElement(int priority, String name, String age, String ward, String gpDetails) {
         this.priority = priority;
         this.name = name;
@@ -22,6 +24,7 @@ public class BloodTestSchedulerElement {
         this.gpDetails = gpDetails;
     }
 
+    //Get and set methods to take the information and display back to the user
     public int getPriority() {
         return priority;
     }
@@ -62,6 +65,7 @@ public class BloodTestSchedulerElement {
         this.gpDetails = gpDetails;
     }
 
+    //message that is going to be displayed to the user on the GUI
     @Override
     public String toString() {
         return "Priority:" + priority + ". Name: " + name

@@ -12,6 +12,8 @@ package bloodtestscheduler;
 
 public interface BloodTestSchedulerQueueInterface {
 
+    //methods to manage the queue (check number of patients, if it's empty, insert, 
+    // remove the first one, display the first one, display all the patients
     public int size();
     public boolean isEmpty();
     public void enqueue(int priority, String name, String age, String ward, String gpDetails);

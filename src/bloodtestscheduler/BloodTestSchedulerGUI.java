@@ -11,6 +11,7 @@ package bloodtestscheduler;
  */
 public class BloodTestSchedulerGUI extends javax.swing.JFrame {
 
+    //queues
     private final BloodTestPriorityQ pq;
 
     private final BloodTestSchedulerQueue qq;
@@ -23,6 +24,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     public BloodTestSchedulerGUI() {
         initComponents();
 
+        //queue with patients info (in order of arrival)
         pq = new BloodTestPriorityQ();
         pq.enqueue(1, "Bernard Fahey", "65", "YES", "Dr. John Kelly");
         pq.enqueue(2, "Mary O'Connell", "25", "NO", "Dr. Sarah Murphy");

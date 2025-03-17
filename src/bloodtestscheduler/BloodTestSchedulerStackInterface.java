@@ -12,6 +12,8 @@ package bloodtestscheduler;
 
 public interface BloodTestSchedulerStackInterface {
     
+    //inserts a new patient in the end of the queue, removes the last one from the queue
+    //display the last one from the queue, check if it's empty, checks the number of patients, display the queue
     public void push(int priority, String name, String age, String ward, String gpDetails);
     public Object pop();    
     public Object peek();

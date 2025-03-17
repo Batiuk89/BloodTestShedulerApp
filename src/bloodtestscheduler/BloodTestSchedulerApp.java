@@ -16,14 +16,15 @@ public class BloodTestSchedulerApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here  
-        
+
+        //initialises the queue
         BloodTestPriorityQ pq = new BloodTestPriorityQ();
 
-        BloodTestSchedulerQueue qq = new  BloodTestSchedulerQueue();
+        BloodTestSchedulerQueue qq = new BloodTestSchedulerQueue();
 
+        //create and display the GUI for the application
         BloodTestSchedulerGUI appGUI = new BloodTestSchedulerGUI();
         appGUI.setVisible(true);
-
 
     }
 

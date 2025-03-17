@@ -13,12 +13,15 @@ import java.util.ArrayList;
  */
 public class BloodTestSchedulerStack implements BloodTestSchedulerStackInterface {
 
+    //array to hold information of the patients
     ArrayList<String> theStack;
     
+    //initialises the queue
     public BloodTestSchedulerStack() {
         this.theStack = new ArrayList<>();
     }
 
+    //coding to manage the methods from BloodTestSchedulerStackInterface
     @Override
     public boolean isEmpty() {
         return theStack.isEmpty();

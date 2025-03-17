@@ -14,12 +14,15 @@ import java.util.ArrayList;
 
 public class BloodTestSchedulerQueue implements BloodTestSchedulerQueueInterface {
 
+    //array to hold information of the patients
     private final ArrayList<String> theQueueA;
 
+    //initialises the queue
     public BloodTestSchedulerQueue() {
         theQueueA = new ArrayList<>();
     }
 
+    //coding to manage the methods from BloodTestSchedulerQueueInterface
     @Override
     public int size() {
         return theQueueA.size();

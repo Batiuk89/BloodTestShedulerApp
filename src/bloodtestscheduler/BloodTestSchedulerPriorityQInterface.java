@@ -11,6 +11,8 @@ package bloodtestscheduler;
  */
 public interface BloodTestSchedulerPriorityQInterface {
 
+    //methods to manage the queue (insert, check number of patients,
+    //if it's empty, remove the first one, display all the patients, and check the last five
     public void enqueue(int priority, String name, String age, String ward, String gpDetails);
     public int size();
     public boolean isEmpty();
